@@ -31,3 +31,8 @@
 # Debug files
 *.dSYM/
 *.su
+
+*~
+*.swp
+[Dd]ebug/*
+[Rr]elease/*
