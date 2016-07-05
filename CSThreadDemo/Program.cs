@@ -1,7 +1,9 @@
-﻿using CSThreadDemo.BarrierPattern;
+﻿using CSThreadDemo.AbortTest;
+using CSThreadDemo.BarrierPattern;
 using CSThreadDemo.CountdownEvent;
 using CSThreadDemo.EventBasedPattern;
 using CSThreadDemo.MonitorPattern;
+using CSThreadDemo.SlimPattern;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +33,15 @@ namespace CSThreadDemo
 
             //Test_Rendezvous();
 
-            Test_BarrieDemo();
+            //Test_BarrieDemo();
+
+            //Test_SlimDemo();
+
+            //Test_SlimUpgradeDemo();
+
+            //Test_Abort();
+
+            Test_AbortDemo();
 
             Console.ReadLine();
         }
@@ -95,6 +105,43 @@ namespace CSThreadDemo
         {
             BarrieDemo barrie = new BarrieDemo();
             barrie.Start();
+        }
+
+        static void Test_SlimDemo()
+        {
+            SlimDemo slim = new SlimDemo();
+
+            slim.Start();
+        }
+
+        static void Test_SlimUpgradeDemo()
+        {
+            SlimUpgradeDemo slim = new SlimUpgradeDemo();
+
+            slim.Start();
+        }
+
+        static void Test_Abort()
+        {
+            Thread t = new Thread(delegate() { while (true);});
+
+            Console.WriteLine(t.ThreadState);
+
+            t.Start();
+            Thread.Sleep(1000);
+            Console.WriteLine(t.ThreadState);
+
+            t.Abort();
+            Console.WriteLine(t.ThreadState);
+
+            t.Join();
+            Console.WriteLine(t.ThreadState);
+        }
+
+        static void Test_AbortDemo()
+        {
+            AbortDemo ad = new AbortDemo();
+            ad.Start();
         }
     }
 }

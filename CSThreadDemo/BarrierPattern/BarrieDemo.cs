@@ -9,7 +9,7 @@ namespace CSThreadDemo.BarrierPattern
 {
     public class BarrieDemo
     {
-        private Barrier _barrier = new Barrier(3);
+        private Barrier _barrier = new Barrier(3, b => Console.WriteLine());
 
         public BarrieDemo()
         { 
