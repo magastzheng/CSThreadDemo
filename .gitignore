@@ -34,5 +34,19 @@
 
 *~
 *.swp
-[Dd]ebug/*
-[Rr]elease/*
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+*.txt
+*.tmp
+*.TMP
+
+*.suo
+*.ncb
+*.pdb
+*.lib
+*.user
+*.bak
+*.ilk
+*.cache
+*.log
