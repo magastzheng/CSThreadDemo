@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarrierPattern\BarrieDemo.cs" />
+    <Compile Include="CountdownEvent\Countdown.cs" />
+    <Compile Include="CountdownEvent\Rendezvous.cs" />
     <Compile Include="EventBasedPattern\BWDoWork.cs" />
     <Compile Include="EventBasedPattern\BWEventHandler.cs" />
     <Compile Include="MonitorPattern\MonitorDemo.cs" />
     <Compile Include="MonitorPattern\PCQueue.cs" />
+    <Compile Include="MonitorPattern\Race.cs" />
+    <Compile Include="MonitorPattern\Solved.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

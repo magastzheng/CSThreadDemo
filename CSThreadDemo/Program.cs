@@ -1,4 +1,6 @@
-﻿using CSThreadDemo.EventBasedPattern;
+﻿using CSThreadDemo.BarrierPattern;
+using CSThreadDemo.CountdownEvent;
+using CSThreadDemo.EventBasedPattern;
 using CSThreadDemo.MonitorPattern;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,15 @@ namespace CSThreadDemo
 
             //Test_MonitorPattern();
 
-            Test_ItemQ();
+            //Test_ItemQ();
+
+            //Test_Race();
+
+            //Test_Solved();
+
+            //Test_Rendezvous();
+
+            Test_BarrieDemo();
 
             Console.ReadLine();
         }
@@ -61,6 +71,30 @@ namespace CSThreadDemo
             pcq.Shutdown(true);
             Console.WriteLine();
             Console.WriteLine("Workers complete!");
+        }
+
+        static void Test_Race()
+        {
+            Race race = new Race();
+            race.Start();
+        }
+
+        static void Test_Solved()
+        {
+            Solved race = new Solved();
+            race.Start();
+        }
+
+        static void Test_Rendezvous()
+        {
+            Rendezvous rend = new Rendezvous();
+            rend.Start();
+        }
+
+        static void Test_BarrieDemo()
+        {
+            BarrieDemo barrie = new BarrieDemo();
+            barrie.Start();
         }
     }
 }
